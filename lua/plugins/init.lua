@@ -21,6 +21,23 @@ return {
     end,
   },
 
+  -- Gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
+
+  {
+    'gorbit99/codewindow.nvim',
+    config = function()
+      local codewindow = require('codewindow')
+      codewindow.setup({ auto_enable = true, minimap_width = 10 })
+      codewindow.apply_default_keybinds()
+    end,
+  },
+
   -- Lualine
   {
     'nvim-lualine/lualine.nvim',
@@ -64,8 +81,11 @@ return {
     dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
   },
   'mfussenegger/nvim-dap',
-  "neovim/nvim-lspconfig",
   'mfussenegger/nvim-lint',
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufRead", "BufNewFile" },
+  },
 
   -- Telescope
   {
@@ -85,16 +105,32 @@ return {
   },
 
   -- Completion
- 'hrsh7th/cmp-nvim-lsp',
- 'hrsh7th/cmp-buffer',
- 'hrsh7th/cmp-path',
- 'hrsh7th/cmp-cmdline',
- 'hrsh7th/cmp-vsnip',
- 'hrsh7th/vim-vsnip',
- {
-   'hrsh7th/nvim-cmp',
-   config = function()
-     require('config/cmp')
-   end,
+  {
+    "hrsh7th/nvim-cmp",
+    -- event = 'InsertEnter',
+    event = "VeryLazy",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "onsails/lspkind-nvim",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-omni",
+      "hrsh7th/cmp-emoji",
+      "quangnguyen30192/cmp-nvim-ultisnips",
+    },
+    config = function()
+      require("config.cmp")
+    end,
   },
+
+  -- Snippet engine and snippet template
+  { "SirVer/ultisnips", dependencies = {
+    "honza/vim-snippets",
+  }, event = "InsertEnter" },
+
+  -- Automatic insertion and deletion of a pair of characters
+  { "Raimondi/delimitMate", event = "InsertEnter" },
+
+  -- Comment plugin
+  { "tpope/vim-commentary", event = "VeryLazy" },
 }
