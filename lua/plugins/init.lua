@@ -2,6 +2,8 @@ return {
   -- Colorscheme 
   "sainnhe/sonokai",
 
+  "xiyaowong/transparent.nvim",
+
   -- NeoTree
   {
     "nvim-neo-tree/neo-tree.nvim",

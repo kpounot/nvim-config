@@ -11,3 +11,5 @@ require("mason-lspconfig").setup({
   },
   automatic_installation = false,
 })
+
+require("lspconfig").pylsp.setup {}
