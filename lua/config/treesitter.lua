@@ -9,10 +9,10 @@ require('nvim-treesitter.configs').setup {
     "rust",
     "toml",
   },
-
   sync_install = false,
   auto_install = true,
   ignore_install = { "javascript" },
+  compilers = { "clang" },
   highlight = {
     enable = true,
     disable = function(lang, buf)
