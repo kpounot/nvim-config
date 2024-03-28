@@ -30,6 +30,8 @@ map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
 map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
 map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
 
+map('n', '<Esc><C-s>', '<cmd>NvimTreeToggle<CR>')
+
 -- LSP
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
@@ -48,3 +50,8 @@ map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true })
 
 -- Hop
 map('n', '<C-h>', '<cmd>HopPattern<CR>')
+
+-- Terminal
+map('n', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
+
+map('n', '<C-z>', '<cmd>CommentToggle<CR>')

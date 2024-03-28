@@ -4,20 +4,16 @@ return {
 
   "xiyaowong/transparent.nvim",
 
-  -- NeoTree
+  -- nvim-tree
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    keys = {
-      { "<Esc><C-s>", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-    },
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      "3rd/image.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
-      require("neo-tree").setup()
+      require("nvim-tree").setup {}
     end,
   },
 
@@ -133,6 +129,31 @@ return {
     'smoka7/hop.nvim',
     config = function()
       require('hop').setup()
+    end,
+  },
+
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+  "HiPhish/nvim-ts-rainbow2",
+
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+
+  -- Which-key
+  {
+    'folke/which-key.nvim',
+    lazy = true,
+    config = function()
+      require("config.whichkey")
+    end,
+  },
+
+  -- nvim-comment
+  {
+    "terrortylor/nvim-comment",
+    config = function()
+      require("nvim_comment").setup({
+        comment_empty = false,
+      })
     end,
   },
 }
