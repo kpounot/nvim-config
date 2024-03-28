@@ -80,14 +80,12 @@ local opts = {
 
 local mappings = {
 
-    ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["m"] = { "<cmd>Mason<CR>", "Mason" },  -- Mason UI for LSP Management
     ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
-    ["u"] = { "<cmd>lua require('undotree').toggle()<CR>", "Undo-Tree" }, -- Undo History
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
 
 
@@ -132,7 +130,6 @@ local mappings = {
     -- Telescope
     f = {
         name = "File Search",
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
         t = { "<cmd>Telescope live_grep <cr>", "Find Text Pattern" },
         r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },

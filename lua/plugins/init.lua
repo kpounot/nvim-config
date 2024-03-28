@@ -142,9 +142,6 @@ return {
   {
     'folke/which-key.nvim',
     lazy = true,
-    config = function()
-      require("config.whichkey")
-    end,
   },
 
   -- nvim-comment
@@ -155,5 +152,10 @@ return {
         comment_empty = false,
       })
     end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }

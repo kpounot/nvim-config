@@ -49,9 +49,11 @@ map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
 map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true })
 
 -- Hop
-map('n', '<C-h>', '<cmd>HopPattern<CR>')
+map('n', '<leader>h', '<cmd>HopPattern<CR>')
 
 -- Terminal
 map('n', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
 
 map('n', '<C-z>', '<cmd>CommentToggle<CR>')
+
+map('n', '<leader>xx', '<cmd>TroubleToggle<CR>')
