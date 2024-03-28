@@ -84,7 +84,6 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["h"] = { "<cmd>HopPattern<cr>", "Hop Pattern finder" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
-    ["m"] = { "<cmd>Mason<CR>", "Mason" },  -- Mason UI for LSP Management
     ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
@@ -156,6 +155,17 @@ local mappings = {
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
+
+    -- Debug - dap-ui
+    d = {
+      name = "Debug",
+      b = { "<cmd>DapToggleBreakpoint<cr>", "Toggle breakpoint" },
+      e = { 
+        "<cmd>lua require('dapui').eval()<cr>", 
+        "evaluate expression" 
+      },
+      t = { "<cmd>lua require('dapui').toggle()<cr>", "DAP-UI" },
+    }
 
 }
 
