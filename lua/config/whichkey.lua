@@ -80,14 +80,16 @@ local opts = {
 
 local mappings = {
 
+    ["a"] = { "<cmd>AerialToggle!<cr>", "Aerial minimap" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
+    ["h"] = { "<cmd>HopPattern<cr>", "Hop Pattern finder" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["m"] = { "<cmd>Mason<CR>", "Mason" },  -- Mason UI for LSP Management
     ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
-
+    ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble diagnostics" },
 
     --Git
     g = {

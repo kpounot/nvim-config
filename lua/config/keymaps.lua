@@ -56,4 +56,4 @@ map('n', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
 
 map('n', '<C-z>', '<cmd>CommentToggle<CR>')
 
-map('n', '<leader>xx', '<cmd>TroubleToggle<CR>')
+map('n', '<leader>x','<cmd>TroubleToggle<CR>')
