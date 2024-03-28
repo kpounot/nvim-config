@@ -90,6 +90,7 @@ local options = {
   conceallevel = 3,
   cmdheight = 0,
   -- filetype = 'on', -- handled by filetypefiletype = 'on' --lugin
+  completeopt = {'menu', 'menuone', 'noselect'}
 }
 
 for k, v in pairs(options) do

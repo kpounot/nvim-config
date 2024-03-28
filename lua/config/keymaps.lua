@@ -25,11 +25,10 @@ map('n', '<C-Left>', '<C-w><')
 
 map('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 
-local builtin = require('telescope.builtin')
-map('n', '<leader>ff', builtin.find_files, {})
-map('n', '<leader>fg', builtin.live_grep, {})
-map('n', '<leader>fb', builtin.buffers, {})
-map('n', '<leader>fh', builtin.help_tags, {})
+map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
+map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
+map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
 
 -- LSP
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
@@ -46,3 +45,6 @@ map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
 map('n', '<leader>df', vim.diagnostic.open_float, { silent = true })
 map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
 map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true })
+
+-- Hop
+map('n', '<C-h>', '<cmd>HopPattern<CR>')

@@ -107,8 +107,7 @@ return {
   -- Completion
   {
     "hrsh7th/nvim-cmp",
-    -- event = 'InsertEnter',
-    event = "VeryLazy",
+    event = 'InsertEnter',
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "onsails/lspkind-nvim",
@@ -116,6 +115,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-omni",
       "hrsh7th/cmp-emoji",
+      "SirVer/ultisnips",
       "quangnguyen30192/cmp-nvim-ultisnips",
     },
     config = function()
@@ -123,14 +123,16 @@ return {
     end,
   },
 
-  -- Snippet engine and snippet template
-  { "SirVer/ultisnips", dependencies = {
-    "honza/vim-snippets",
-  }, event = "InsertEnter" },
-
   -- Automatic insertion and deletion of a pair of characters
   { "Raimondi/delimitMate", event = "InsertEnter" },
 
   -- Comment plugin
   { "tpope/vim-commentary", event = "VeryLazy" },
+
+  {
+    'smoka7/hop.nvim',
+    config = function()
+      require('hop').setup()
+    end,
+  },
 }
