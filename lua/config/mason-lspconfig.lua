@@ -6,14 +6,40 @@ require("mason-lspconfig").setup({
     "tsserver",
     "ltex",
     "remark_ls",
-    "pylsp",
-    "rust_analyzer",
-    "sourcery",
+    "pyright",
   },
   automatic_installation = false,
 })
 
-require("lspconfig").pylsp.setup {}
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").sourcery.setup {}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local servers = {
+  pyright = {},
+  tsserver = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        completion = {
+          callSnippet = 'Replace',
+        },
+      },
+    },
+  },
+}
 
+require('mason-lspconfig').setup {
+  handlers = {
+    function(server_name)
+      if server_name == 'rust_analyzer' then
+        require('lspconfig')['rust_analyzer'].setup({
+          function() return true end
+        })
+      else
+        local server = servers[server_name] or {}
+        server.capabilities = vim.tbl_deep_extend(
+          'force', {}, capabilities, server.capabilities or {}
+        )
+        require('lspconfig')[server_name].setup(server)
+      end
+    end,
+  },
+}

@@ -66,10 +66,9 @@ return {
     end,
   },
   {
-    'simrat39/rust-tools.nvim',
-    config = function()
-      require("config.rust_tools")
-    end,
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    ft = { 'rust' },
   },
   { "folke/neodev.nvim", opts = {} },
   { 
@@ -82,7 +81,12 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufRead", "BufNewFile" },
   },
-
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
+    end
+  },
   -- Telescope
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
