@@ -84,7 +84,6 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["h"] = { "<cmd>HopPattern<cr>", "Hop Pattern finder" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
-    ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
@@ -134,6 +133,7 @@ local mappings = {
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
         t = { "<cmd>Telescope live_grep <cr>", "Find Text Pattern" },
         r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+        e = { "<cmd>Telescope file_browser<cr>", "File browser" },
     },
 
     s = {
@@ -165,8 +165,17 @@ local mappings = {
         "evaluate expression" 
       },
       t = { "<cmd>lua require('dapui').toggle()<cr>", "DAP-UI" },
-    }
+    },
 
+    -- Sessions
+    w = {
+      name = "Persistence",
+      s = { "<cmd>lua require('persistence').load()<cr>", "Load session" },
+      l = { 
+        "<cmd>lua require('persistence').load({ last = true })<cr>", 
+        "Load last session" 
+      },
+    },
 }
 
 which_key.setup(setup)

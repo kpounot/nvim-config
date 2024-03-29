@@ -30,8 +30,6 @@ map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
 map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
 map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
 
-map('n', '<Esc><C-s>', '<cmd>NvimTreeToggle<CR>')
-
 -- LSP
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
