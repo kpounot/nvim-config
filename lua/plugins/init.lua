@@ -29,7 +29,7 @@ return {
     'gorbit99/codewindow.nvim',
     config = function()
       local codewindow = require('codewindow')
-      codewindow.setup({ auto_enable = true, minimap_width = 10 })
+      codewindow.setup({ auto_enable = false, minimap_width = 10 })
       codewindow.apply_default_keybinds()
     end,
   },
@@ -97,6 +97,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function() 
       require('telescope').load_extension("file_browser")
+      require('telescope').load_extension("persisted")
     end,
   },
   {
@@ -176,7 +177,12 @@ return {
 
   -- Sessions
   {
-    "folke/persistence.nvim",
-    event = "BufReadPre", 
-  }
+    "olimorris/persisted.nvim",
+    lazy = false, -- make sure the plugin is always loaded at startup
+    config = function()
+      require("persisted").setup({
+        autosave = false,
+      })
+    end,
+  },
 }

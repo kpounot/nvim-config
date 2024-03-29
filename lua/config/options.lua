@@ -24,6 +24,8 @@ vim.g.markdown_fenced_languages = {
   "sh",
 }
 
+vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
+
 vim.diagnostic.config {
   float = { border = "rounded" }, -- add border to diagnostic popups
 }

@@ -82,7 +82,7 @@ local mappings = {
 
     ["a"] = { "<cmd>AerialToggle!<cr>", "Aerial minimap" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
-    ["h"] = { "<cmd>HopPattern<cr>", "Hop Pattern finder" }, -- File Explorer
+    ["h"] = { "<cmd>HopAnywhere<cr>", "Hop anywhere" },
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
@@ -170,11 +170,14 @@ local mappings = {
     -- Sessions
     w = {
       name = "Persistence",
-      s = { "<cmd>lua require('persistence').load()<cr>", "Load session" },
-      l = { 
-        "<cmd>lua require('persistence').load({ last = true })<cr>", 
-        "Load last session" 
-      },
+      a = { "<cmd>SessionLoadLast<cr>", "Load last session" },
+      d = { "<cmd>SessionDelete<cr>", "Delete session" },
+      l = { "<cmd>SessionLoad<cr>", "Load session" },
+      p = { "<cmd>Telescope persisted<cr>", "List sessions" },
+      r = { "<cmd>SessionStart<cr>", "Start record session" },
+      s = { "<cmd>SessionSave<cr>", "Save session" },
+      t = { "<cmd>SessionToggle<cr>", "Toggle session" },
+      x = { "<cmd>SessionStop<cr>", "Stop record session" },
     },
 }
 
