@@ -138,9 +138,6 @@ return {
   -- Automatic insertion and deletion of a pair of characters
   { "Raimondi/delimitMate", event = "InsertEnter" },
 
-  -- Comment plugin
-  { "tpope/vim-commentary", event = "VeryLazy" },
-
   {
     'smoka7/hop.nvim',
     config = function()

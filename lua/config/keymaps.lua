@@ -53,5 +53,6 @@ map('n', '<leader>h', '<cmd>HopPattern<CR>')
 map('n', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
 
 map('n', '<C-z>', '<cmd>CommentToggle<CR>')
+map('v', '<C-z>', ":'<,'>CommentToggle<CR>")
 
 map('n', '<leader>x','<cmd>TroubleToggle<CR>')
