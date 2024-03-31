@@ -82,12 +82,12 @@ local mappings = {
 
     ["a"] = { "<cmd>AerialToggle!<cr>", "Aerial minimap" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
-    ["h"] = { "<cmd>HopAnywhere<cr>", "Hop anywhere" },
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
-    ["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
+    ["r"] = { "<cmd>RustLsp runnables<cr>", "Rust Cargo run" },
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
     ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble diagnostics" },
+    ["z"] = { "<cmd>HopCamelCase<cr>", "Hop - CamelCase" },
 
     --Git
     g = {

@@ -3,7 +3,7 @@ cmp.setup({
   -- Enable LSP snippets
   snippet = {
     expand = function(args)
-        vim.fn["UltiSnips#Anon"](args.body)
+        vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
@@ -28,7 +28,7 @@ cmp.setup({
     { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
     { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
     { name = 'buffer', keyword_length = 2 },        -- source current buffer
-    { name = "ultisnips" },
+    { name = "vsnip" },
   },
   formatting = {
       fields = {'menu', 'abbr', 'kind'},

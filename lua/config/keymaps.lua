@@ -46,9 +46,6 @@ map('n', '<leader>df', vim.diagnostic.open_float, { silent = true })
 map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
 map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true })
 
--- Hop
-map('n', '<leader>h', '<cmd>HopPattern<CR>')
-
 -- Terminal
 map('n', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
 

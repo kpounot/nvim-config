@@ -127,13 +127,14 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-omni",
       "hrsh7th/cmp-emoji",
-      "SirVer/ultisnips",
-      "quangnguyen30192/cmp-nvim-ultisnips",
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
     },
     config = function()
       require("config.cmp")
     end,
   },
+  { "rafamadriz/friendly-snippets" },
 
   -- Automatic insertion and deletion of a pair of characters
   { "Raimondi/delimitMate", event = "InsertEnter" },
