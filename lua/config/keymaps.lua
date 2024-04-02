@@ -41,6 +41,13 @@ map('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
 map('n', '<C-s>', ':lua vim.lsp.buf.signature_help()<CR>')
 map('n', '<leader>af', ':lua vim.lsp.buf.code_action()<CR>')
 map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
+map({ "i", "s" }, "<tab>", function()
+  if vim.fn["vsnip#jumpable"](1) == 1 then
+    return '<plug>(vsnip-jump-next)'
+  else
+    return "<tab>"
+  end
+end, { expr = true, remap = true })
 
 map('n', '<leader>df', vim.diagnostic.open_float, { silent = true })
 map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
