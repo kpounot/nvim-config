@@ -47,7 +47,7 @@ map({ "i", "s" }, "<tab>", function()
   else
     return "<tab>"
   end
-end, { expr = true, remap = true })
+end, { expr = true, remap = false })
 
 map('n', '<leader>df', vim.diagnostic.open_float, { silent = true })
 map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
