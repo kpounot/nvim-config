@@ -12,7 +12,7 @@ local g = vim.g
 -- https://vi.stackexchange.com/a/5318/7339
 vim.g.matchparen_timeout = 20
 vim.g.matchparen_insert_timeout = 20
-
+vim.g.vsnip_snippet_dir = string.format("%s/.vsnip", vim.fn.stdpath('config'))
 vim.g.markdown_fenced_languages = {
   "html",
   "javascript",
