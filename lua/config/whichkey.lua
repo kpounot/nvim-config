@@ -84,7 +84,6 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
-    ["r"] = { "<cmd>RustLsp runnables<cr>", "Rust Cargo run" },
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
     ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble diagnostics" },
     ["z"] = { "<cmd>HopCamelCase<cr>", "Hop - CamelCase" },
@@ -134,6 +133,13 @@ local mappings = {
         t = { "<cmd>Telescope live_grep <cr>", "Find Text Pattern" },
         r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
         e = { "<cmd>Telescope file_browser<cr>", "File browser" },
+    },
+
+    r = { 
+        name = "Rust",
+        d = { "<cmd>RustLsp debuggables<cr>", "Rust Cargo debuggables" },
+        r = { "<cmd>RustLsp runnables<cr>", "Rust Cargo runnables" },
+        t = { "<cmd>RustLsp testables<cr>", "Rust Cargo testables" },
     },
 
     s = {
