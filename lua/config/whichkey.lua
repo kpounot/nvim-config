@@ -84,7 +84,6 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
-    ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
     ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble diagnostics" },
     ["z"] = { "<cmd>HopCamelCase<cr>", "Hop - CamelCase" },
 
@@ -166,9 +165,9 @@ local mappings = {
     d = {
       name = "Debug",
       b = { "<cmd>DapToggleBreakpoint<cr>", "Toggle breakpoint" },
-      e = { 
-        "<cmd>lua require('dapui').eval()<cr>", 
-        "evaluate expression" 
+      e = {
+        "<cmd>lua require('dapui').eval()<cr>",
+        "evaluate expression"
       },
       t = { "<cmd>lua require('dapui').toggle()<cr>", "DAP-UI" },
     },
