@@ -80,7 +80,7 @@ local opts = {
 
 local mappings = {
 
-    ["a"] = { "<cmd>AerialToggle!<cr>", "Aerial minimap" },
+    ["a"] = { "<cmd>AerialToggle<cr>", "Aerial minimap" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file

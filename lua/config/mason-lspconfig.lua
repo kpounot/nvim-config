@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
     "ltex",
     "remark_ls",
     "pyright",
+    "rust_analyzer",
   },
   automatic_installation = false,
 })

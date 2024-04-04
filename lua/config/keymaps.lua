@@ -23,7 +23,7 @@ map('n', '<C-Down>', '<C-w>-')
 map('n', '<C-Right>', '<C-w>>')
 map('n', '<C-Left>', '<C-w><')
 
-map('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+map('n', '<leader>a', '<cmd>AerialToggle<CR>')
 
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
