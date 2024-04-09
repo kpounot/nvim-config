@@ -4,6 +4,8 @@ return {
 
   "xiyaowong/transparent.nvim",
 
+  "AndrewRadev/splitjoin.vim",
+
   -- nvim-tree
   {
     "nvim-tree/nvim-tree.lua",
