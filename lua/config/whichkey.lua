@@ -134,20 +134,20 @@ local mappings = {
         e = { "<cmd>Telescope file_browser<cr>", "File browser" },
     },
 
-    r = { 
-        name = "Rust",
-        d = { "<cmd>RustLsp debuggables<cr>", "Rust Cargo debuggables" },
-        r = { "<cmd>RustLsp runnables<cr>", "Rust Cargo runnables" },
-        t = { "<cmd>RustLsp testables<cr>", "Rust Cargo testables" },
-    },
-
-    s = {
-        name = "Search",
+    h = {
+        name = "Help",
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         r = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         c = { "<cmd>Telescope commands<cr>", "Commands" },
+    },
+
+    r = { 
+        name = "Rust",
+        d = { "<cmd>RustLsp debuggables<cr>", "Rust Cargo debuggables" },
+        r = { "<cmd>RustLsp runnables<cr>", "Rust Cargo runnables" },
+        t = { "<cmd>RustLsp testables<cr>", "Rust Cargo testables" },
     },
 
     --ToggleTerm

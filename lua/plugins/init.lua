@@ -4,9 +4,16 @@ return {
 
   "xiyaowong/transparent.nvim",
 
-  "AndrewRadev/splitjoin.vim",
+  {
+    'Wansmer/treesj',
+    keys = { '<space>s', '', '' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({--[[ your config ]]})
+    end,
+  },
 
-  -- nvim-tree
+    -- nvim-tree
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
