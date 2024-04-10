@@ -54,7 +54,13 @@ map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
 map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true })
 
 -- Terminal
-map('n', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
+map('', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
+map('t', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
+map('t', '<esc>', [[<C-\><C-n>]])
+map('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
+map('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
+map('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
+map('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
 
 map('n', '<C-z>', '<cmd>CommentToggle<CR>')
 map('v', '<C-z>', ":'<,'>CommentToggle<CR>")

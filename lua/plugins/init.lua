@@ -1,6 +1,16 @@
 return {
   -- Colorscheme 
-  "sainnhe/sonokai",
+  {
+    "sainnhe/sonokai",
+    config = function()
+      if vim.fn.has('termguicolors') then
+        vim.o.termguicolors = true
+      end
+      vim.g.sonokai_style = "andromeda"
+      vim.g.sonokai_better_performance = 1
+      vim.cmd [[colorscheme sonokai]]
+    end,
+  },
 
   "xiyaowong/transparent.nvim",
 
