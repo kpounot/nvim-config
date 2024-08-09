@@ -23,7 +23,7 @@ map('n', '<C-Down>', '<C-w>-')
 map('n', '<C-Right>', '<C-w>>')
 map('n', '<C-Left>', '<C-w><')
 
-map('n', '<leader>a', '<cmd>AerialToggle<CR>')
+map('n', '<leader>a', '<cmd>AerialToggle<CR>', { desc='AerialToggle' })
 
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
@@ -49,9 +49,9 @@ map({ "i", "s" }, "<tab>", function()
   end
 end, { expr = true, remap = false })
 
-map('n', '<leader>df', vim.diagnostic.open_float, { silent = true })
-map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true })
-map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true })
+map('n', '<leader>df', vim.diagnostic.open_float, { silent = true }, { desc='Diagnostic - float' })
+map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true }, { desc='Diagnostic - go to next' })
+map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true}, { desc='Diagnostic - go to preious' })
 
 -- Terminal
 map('', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
@@ -66,3 +66,7 @@ map('n', '<C-z>', '<cmd>CommentToggle<CR>')
 map('v', '<C-z>', ":'<,'>CommentToggle<CR>")
 
 map('n', '<leader>x','<cmd>TroubleToggle<CR>')
+
+map('n', '<leader>z','<cmd>HopCamelCase<CR>')
+
+map('n', '<leader>e','<cmd>NvimTreeToggle<CR>')
