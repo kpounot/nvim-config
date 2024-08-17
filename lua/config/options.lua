@@ -19,7 +19,7 @@ vim.g.markdown_fenced_languages = {
 
 vim.o.sessionoptions = "buffers,curdir,folds,tabpages,winpos,winsize"
 
-vim.o.shell = 'pwsh'
+vim.o.shell = 'powershell'
 vim.o.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
 vim.o.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
 vim.o.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
@@ -91,7 +91,7 @@ local options = {
   confirm = false,
   conceallevel = 3,
   cmdheight = 0,
-  -- filetype = 'on', -- handled by filetypefiletype = 'on' --lugin
+  filetype = 'on', -- handled by filetypefiletype = 'on' --lugin
   completeopt = {'menu', 'menuone', 'noselect'}
 }
 

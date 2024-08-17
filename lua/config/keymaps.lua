@@ -40,7 +40,6 @@ map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
 map('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
 map('n', '<C-s>', ':lua vim.lsp.buf.signature_help()<CR>')
 map('n', '<leader>af', ':lua vim.lsp.buf.code_action()<CR>')
-map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
 map({ "i", "s" }, "<tab>", function()
   if vim.fn["vsnip#jumpable"](1) == 1 then
     return '<plug>(vsnip-jump-next)'
@@ -49,9 +48,9 @@ map({ "i", "s" }, "<tab>", function()
   end
 end, { expr = true, remap = false })
 
-map('n', '<leader>df', vim.diagnostic.open_float, { silent = true }, { desc='Diagnostic - float' })
-map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true }, { desc='Diagnostic - go to next' })
-map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true}, { desc='Diagnostic - go to preious' })
+map('n', '<leader>df', vim.diagnostic.open_float, { silent = true, desc='Diagnostic - float' })
+map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true , desc='Diagnostic - go to next' })
+map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true, desc='Diagnostic - go to preious' })
 
 -- Terminal
 map('', '<F9>', '<cmd>ToggleTerm direction=float<CR>')

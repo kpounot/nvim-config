@@ -7,7 +7,6 @@ require("mason-lspconfig").setup({
     "ltex",
     "remark_ls",
     "pyright",
-    "rust_analyzer",
   },
   automatic_installation = false,
 })
@@ -30,17 +29,11 @@ local servers = {
 require('mason-lspconfig').setup {
   handlers = {
     function(server_name)
-      if server_name == 'rust_analyzer' then
-        require('lspconfig')['rust_analyzer'].setup({
-          function() return true end
-        })
-      else
-        local server = servers[server_name] or {}
-        server.capabilities = vim.tbl_deep_extend(
-          'force', {}, capabilities, server.capabilities or {}
-        )
-        require('lspconfig')[server_name].setup(server)
-      end
+      local server = servers[server_name] or {}
+      server.capabilities = vim.tbl_deep_extend(
+        'force', {}, capabilities, server.capabilities or {}
+      )
+      require('lspconfig')[server_name].setup(server)
     end,
   },
 }
