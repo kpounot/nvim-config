@@ -3,7 +3,6 @@ require("mason-lspconfig").setup({
     "clangd",
     "cssls",
     "jsonls",
-    "tsserver",
     "ltex",
     "remark_ls",
     "pyright",
