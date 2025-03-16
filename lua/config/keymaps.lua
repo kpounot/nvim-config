@@ -25,10 +25,10 @@ map('n', '<C-Left>', '<C-w><')
 
 map('n', '<leader>a', '<cmd>AerialToggle<CR>', { desc='AerialToggle' })
 
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
-map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
-map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
-map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
+map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { desc='Fuzzy find files' })
+map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { desc='Fuzzy grep' })
+map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { desc='Fuzzy find buffers' })
+map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { desc='Help tags' })
 
 -- LSP
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
@@ -44,16 +44,18 @@ map({ "i", "s" }, "<tab>", function()
   if vim.fn["vsnip#jumpable"](1) == 1 then
     return '<plug>(vsnip-jump-next)'
   else
-    return "<tab>"
+    return '<tab>'
   end
 end, { expr = true, remap = false })
 
 map('n', '<leader>df', vim.diagnostic.open_float, { silent = true, desc='Diagnostic - float' })
 map('n', '<leader>dn', vim.diagnostic.goto_next, { silent = true , desc='Diagnostic - go to next' })
 map('n', '<leader>dp', vim.diagnostic.goto_prev, { silent = true, desc='Diagnostic - go to preious' })
+map('n', '<leader>du', ":lua require('dapui').toggle()<CR>", { desc='Dap-UI toggle'})
+map('n', '<leader>db', "<cmd> DapToggleBreakpoint<CR>", { desc='Dap- toggle breakpoint'})
 
 -- Terminal
-map('', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
+map('', '<F9>', '<cmd>ToggleTerm direction=float<CR>', { desc='Open/Close floating terminal' })
 map('t', '<F9>', '<cmd>ToggleTerm direction=float<CR>')
 map('t', '<esc>', [[<C-\><C-n>]])
 map('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
@@ -61,11 +63,16 @@ map('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
 map('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
 map('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
 
-map('n', '<C-z>', '<cmd>CommentToggle<CR>')
+map('n', '<C-z>', '<cmd>CommentToggle<CR>', { desc='Toggle comment' })
 map('v', '<C-z>', ":'<,'>CommentToggle<CR>")
 
-map('n', '<leader>x','<cmd>TroubleToggle<CR>')
+map('n', "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc="Diagnostics (Trouble)" })
+map('n', "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc="Buffer Diagnostics (Trouble)" })
+map('n', "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc="Symbols (Trouble)" })
+map('n', "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc="LSP Definitions / references / .}. (Trouble)" })
+map('n', "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc="Location List (Trouble)" })
+map('n', "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc="Quickfix List (Trouble)" })
 
-map('n', '<leader>z','<cmd>HopCamelCase<CR>')
+map('n', '<leader>z','<cmd>HopCamelCase<CR>', { desc='Hop - Camel Case' })
 
-map('n', '<leader>e','<cmd>NvimTreeToggle<CR>')
+map('n', '<leader>e','<cmd>NvimTreeToggle<CR>', { desc='Toggle directory tree' })
