@@ -187,11 +187,11 @@ return {
     end,
   },
 
-  {
-    "folke/trouble.nvim",
-    opts = {},
-    cmd="Trouble"
-  },
+  -- {
+  --   "folke/trouble.nvim",
+  --   opts={},
+  --   cmd="Trouble"
+  -- },
 
   -- Sessions
   {
